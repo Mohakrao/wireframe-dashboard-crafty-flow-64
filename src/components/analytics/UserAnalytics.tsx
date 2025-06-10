@@ -25,25 +25,25 @@ export const UserAnalytics = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="border-purple-200 bg-white shadow-lg">
+        <Card className="border-pink-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="text-purple-800">Time Spent on Learning</CardTitle>
+            <CardTitle className="text-pink-800">Time Spent on Learning</CardTitle>
             <CardDescription>Daily, weekly, monthly, and yearly breakdown</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={learningTimeData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
-                <XAxis dataKey="period" stroke="#8b5cf6" />
-                <YAxis stroke="#8b5cf6" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#fce7f3" />
+                <XAxis dataKey="period" stroke="#ec4899" />
+                <YAxis stroke="#ec4899" />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#f3e8ff', 
-                    border: '1px solid #8b5cf6',
+                    backgroundColor: '#fdf2f8', 
+                    border: '1px solid #ec4899',
                     borderRadius: '8px'
                   }} 
                 />
-                <Bar dataKey="hours" fill="#8b5cf6" />
+                <Bar dataKey="hours" fill="#ec4899" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -81,9 +81,9 @@ export const UserAnalytics = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card className="border-purple-200 bg-white shadow-lg">
+        <Card className="border-sky-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-purple-800">
+            <CardTitle className="flex items-center gap-2 text-sky-800">
               <Calendar className="w-5 h-5" />
               Deadlines Tracking
             </CardTitle>
@@ -92,11 +92,11 @@ export const UserAnalytics = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm">Met on Time</span>
-                <Badge variant="default" className="bg-purple-600">18</Badge>
+                <Badge variant="default" className="bg-sky-600">18</Badge>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm">Exceeded Duration</span>
-                <Badge variant="secondary" className="bg-purple-100 text-purple-700">3</Badge>
+                <Badge variant="secondary" className="bg-sky-100 text-sky-700">3</Badge>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm">Missed Deadlines</span>
@@ -110,9 +110,9 @@ export const UserAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-purple-200 bg-white shadow-lg">
+        <Card className="border-pink-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-purple-800">
+            <CardTitle className="flex items-center gap-2 text-pink-800">
               <Award className="w-5 h-5" />
               Assignment Scores
             </CardTitle>
@@ -120,17 +120,17 @@ export const UserAnalytics = () => {
           <CardContent>
             <div className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-700">87.5</div>
+                <div className="text-3xl font-bold text-pink-700">87.5</div>
                 <div className="text-sm text-muted-foreground">Average Score</div>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-sm">Highest Score</span>
-                  <span className="font-semibold text-purple-700">96</span>
+                  <span className="font-semibold text-pink-700">96</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm">Lowest Score</span>
-                  <span className="font-semibold text-purple-700">72</span>
+                  <span className="font-semibold text-pink-700">72</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm">Improvement</span>
@@ -173,30 +173,30 @@ export const UserAnalytics = () => {
         </Card>
       </div>
 
-      <Card className="border-purple-200 bg-white shadow-lg">
+      <Card className="border-sky-200 bg-white shadow-lg">
         <CardHeader>
-          <CardTitle className="text-purple-800">Learning Progress Timeline</CardTitle>
+          <CardTitle className="text-sky-800">Learning Progress Timeline</CardTitle>
           <CardDescription>Your learning journey over the past 6 months</CardDescription>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={courseCompletionData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
-              <XAxis dataKey="month" stroke="#8b5cf6" />
-              <YAxis stroke="#8b5cf6" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#bae6fd" />
+              <XAxis dataKey="month" stroke="#38bdf8" />
+              <YAxis stroke="#38bdf8" />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#f3e8ff', 
-                  border: '1px solid #8b5cf6',
+                  backgroundColor: '#f0f9ff', 
+                  border: '1px solid #38bdf8',
                   borderRadius: '8px'
                 }} 
               />
               <Line 
                 type="monotone" 
                 dataKey="completed" 
-                stroke="#8b5cf6" 
+                stroke="#38bdf8" 
                 strokeWidth={3}
-                dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 6 }}
+                dot={{ fill: '#38bdf8', strokeWidth: 2, r: 6 }}
               />
             </LineChart>
           </ResponsiveContainer>

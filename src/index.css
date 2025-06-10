@@ -46,10 +46,26 @@
     --sidebar-border: 226 232 240;
     --sidebar-ring: 139 92 246;
 
-    /* Custom purple gradients from the design */
-    --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
-    --gradient-purple-light: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #ddd6fe 100%);
-    --gradient-purple-dark: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #8b5cf6 100%);
+    /* New light color palette - Pink, Purple, Sky Blue */
+    --light-pink: 251 207 232;
+    --light-pink-foreground: 157 23 77;
+    --medium-pink: 244 114 182;
+    --dark-pink: 219 39 119;
+
+    --light-purple: 221 214 254;
+    --light-purple-foreground: 88 28 135;
+    --medium-purple: 167 139 250;
+    --dark-purple: 124 58 237;
+
+    --light-sky: 186 230 253;
+    --light-sky-foreground: 12 74 110;
+    --medium-sky: 56 189 248;
+    --dark-sky: 2 132 199;
+
+    /* Custom gradients with new color palette */
+    --gradient-pink-purple: linear-gradient(135deg, rgb(251, 207, 232) 0%, rgb(221, 214, 254) 50%, rgb(186, 230, 253) 100%);
+    --gradient-sky-pink: linear-gradient(135deg, rgb(186, 230, 253) 0%, rgb(251, 207, 232) 50%, rgb(221, 214, 254) 100%);
+    --gradient-purple-sky: linear-gradient(135deg, rgb(221, 214, 254) 0%, rgb(186, 230, 253) 100%);
     
     /* Income/Expense colors from the design */
     --income-color: 16 185 129;
@@ -108,16 +124,52 @@
 }
 
 @layer utilities {
-  .gradient-purple {
-    background: var(--gradient-purple);
+  .gradient-pink-purple {
+    background: var(--gradient-pink-purple);
   }
   
-  .gradient-purple-light {
-    background: var(--gradient-purple-light);
+  .gradient-sky-pink {
+    background: var(--gradient-sky-pink);
   }
   
-  .gradient-purple-dark {
-    background: var(--gradient-purple-dark);
+  .gradient-purple-sky {
+    background: var(--gradient-purple-sky);
+  }
+  
+  .text-light-pink {
+    color: hsl(var(--light-pink-foreground));
+  }
+  
+  .text-light-purple {
+    color: hsl(var(--light-purple-foreground));
+  }
+  
+  .text-light-sky {
+    color: hsl(var(--light-sky-foreground));
+  }
+  
+  .bg-light-pink {
+    background-color: hsl(var(--light-pink));
+  }
+  
+  .bg-light-purple {
+    background-color: hsl(var(--light-purple));
+  }
+  
+  .bg-light-sky {
+    background-color: hsl(var(--light-sky));
+  }
+  
+  .border-light-pink {
+    border-color: hsl(var(--medium-pink));
+  }
+  
+  .border-light-purple {
+    border-color: hsl(var(--medium-purple));
+  }
+  
+  .border-light-sky {
+    border-color: hsl(var(--medium-sky));
   }
   
   .text-income {

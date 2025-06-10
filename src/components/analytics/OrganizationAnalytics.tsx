@@ -15,9 +15,9 @@ export const OrganizationAnalytics = () => {
   ];
 
   const engagementData = [
-    { name: "High", value: 45, color: "#8b5cf6" },
+    { name: "High", value: 45, color: "#ec4899" },
     { name: "Medium", value: 35, color: "#a855f7" },
-    { name: "Low", value: 20, color: "#c084fc" },
+    { name: "Low", value: 20, color: "#38bdf8" },
   ];
 
   const handleViewDetails = (cardType: string) => {
@@ -27,15 +27,15 @@ export const OrganizationAnalytics = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="hover:shadow-2xl transition-all duration-300 border-purple-200 bg-gradient-to-br from-white to-purple-50 hover:scale-105">
+        <Card className="hover:shadow-2xl transition-all duration-300 border-pink-200 bg-gradient-to-br from-white to-pink-50 hover:scale-105">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-purple-800">Total Employees</CardTitle>
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <Users className="h-4 w-4 text-purple-600" />
+            <CardTitle className="text-sm font-medium text-pink-800">Total Employees</CardTitle>
+            <div className="p-2 bg-pink-100 rounded-lg">
+              <Users className="h-4 w-4 text-pink-600" />
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-purple-900 mb-2">1,247</div>
+            <div className="text-3xl font-bold text-pink-900 mb-2">1,247</div>
             <p className="text-xs text-muted-foreground mb-3">
               <span className="text-green-500 flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" />
@@ -44,7 +44,7 @@ export const OrganizationAnalytics = () => {
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-md"
               onClick={() => handleViewDetails('total-employees')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -70,7 +70,7 @@ export const OrganizationAnalytics = () => {
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-md"
               onClick={() => handleViewDetails('active-learners')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -79,21 +79,21 @@ export const OrganizationAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="hover:shadow-2xl transition-all duration-300 border-purple-200 bg-gradient-to-br from-white to-purple-50 hover:scale-105">
+        <Card className="hover:shadow-2xl transition-all duration-300 border-sky-200 bg-gradient-to-br from-white to-sky-50 hover:scale-105">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-purple-800">Avg Learning Hours</CardTitle>
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <Clock className="h-4 w-4 text-purple-600" />
+            <CardTitle className="text-sm font-medium text-sky-800">Avg Learning Hours</CardTitle>
+            <div className="p-2 bg-sky-100 rounded-lg">
+              <Clock className="h-4 w-4 text-sky-600" />
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-purple-900 mb-2">48.2h</div>
+            <div className="text-3xl font-bold text-sky-900 mb-2">48.2h</div>
             <p className="text-xs text-muted-foreground mb-3">
-              <span className="text-purple-600">Monthly average</span>
+              <span className="text-sky-600">Monthly average</span>
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white shadow-md"
               onClick={() => handleViewDetails('learning-hours')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -102,15 +102,15 @@ export const OrganizationAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="hover:shadow-2xl transition-all duration-300 border-purple-200 bg-gradient-to-br from-white to-purple-50 hover:scale-105">
+        <Card className="hover:shadow-2xl transition-all duration-300 border-pink-200 bg-gradient-to-br from-white to-pink-50 hover:scale-105">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-purple-800">Completion Rate</CardTitle>
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <Award className="h-4 w-4 text-purple-600" />
+            <CardTitle className="text-sm font-medium text-pink-800">Completion Rate</CardTitle>
+            <div className="p-2 bg-pink-100 rounded-lg">
+              <Award className="h-4 w-4 text-pink-600" />
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-purple-900 mb-2">84.3%</div>
+            <div className="text-3xl font-bold text-pink-900 mb-2">84.3%</div>
             <p className="text-xs text-muted-foreground mb-3">
               <span className="text-green-500 flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" />
@@ -119,7 +119,7 @@ export const OrganizationAnalytics = () => {
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-md"
               onClick={() => handleViewDetails('completion-rate')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -138,21 +138,21 @@ export const OrganizationAnalytics = () => {
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
               <AreaChart data={courseCompletionData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
-                <XAxis dataKey="month" stroke="#8b5cf6" />
-                <YAxis stroke="#8b5cf6" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#ddd6fe" />
+                <XAxis dataKey="month" stroke="#a855f7" />
+                <YAxis stroke="#a855f7" />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#f3e8ff', 
-                    border: '1px solid #8b5cf6',
+                    backgroundColor: '#fae8ff', 
+                    border: '1px solid #a855f7',
                     borderRadius: '8px'
                   }} 
                 />
-                <Area type="monotone" dataKey="completed" stroke="#8b5cf6" fill="url(#colorGradient)" fillOpacity={0.6} />
+                <Area type="monotone" dataKey="completed" stroke="#a855f7" fill="url(#colorGradient)" fillOpacity={0.6} />
                 <defs>
                   <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.1}/>
+                    <stop offset="5%" stopColor="#a855f7" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#a855f7" stopOpacity={0.1}/>
                   </linearGradient>
                 </defs>
               </AreaChart>
@@ -160,10 +160,10 @@ export const OrganizationAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-purple-200 bg-white shadow-lg">
+        <Card className="border-sky-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="text-purple-800 text-xl">Learning Engagement</CardTitle>
-            <CardDescription className="text-purple-600">Employee engagement distribution</CardDescription>
+            <CardTitle className="text-sky-800 text-xl">Learning Engagement</CardTitle>
+            <CardDescription className="text-sky-600">Employee engagement distribution</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -183,8 +183,8 @@ export const OrganizationAnalytics = () => {
                 </Pie>
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#f3e8ff', 
-                    border: '1px solid #8b5cf6',
+                    backgroundColor: '#f0f9ff', 
+                    border: '1px solid #38bdf8',
                     borderRadius: '8px'
                   }} 
                 />
@@ -194,7 +194,7 @@ export const OrganizationAnalytics = () => {
               {engagementData.map((item) => (
                 <div key={item.name} className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
-                  <span className="text-sm text-purple-700 font-medium">{item.name}: {item.value}%</span>
+                  <span className="text-sm text-sky-700 font-medium">{item.name}: {item.value}%</span>
                 </div>
               ))}
             </div>

@@ -10,28 +10,28 @@ const Index = () => {
   const [activeTab, setActiveTab] = useState("organization");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-100">
+    <div className="min-h-screen gradient-pink-purple">
       <div className="container mx-auto p-6">
         <div className="mb-8">
-          <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-pink-600 via-purple-600 to-sky-600 bg-clip-text text-transparent">
             Analytics Dashboard
           </h1>
-          <p className="text-purple-600 text-lg font-medium">
+          <p className="text-purple-700 text-lg font-medium">
             Comprehensive learning and development insights across your organization
           </p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 h-14 bg-white border-2 border-purple-200 shadow-lg rounded-xl">
-            <TabsTrigger value="organization" className="flex items-center gap-2 text-purple-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
+          <TabsList className="grid w-full grid-cols-3 h-14 bg-white border-2 border-pink-200 shadow-lg rounded-xl">
+            <TabsTrigger value="organization" className="flex items-center gap-2 text-pink-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-500 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
               <Activity className="w-4 h-4" />
               Organization Analytics
             </TabsTrigger>
-            <TabsTrigger value="department" className="flex items-center gap-2 text-purple-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
+            <TabsTrigger value="department" className="flex items-center gap-2 text-purple-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-sky-500 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
               <Users className="w-4 h-4" />
               Department Analytics
             </TabsTrigger>
-            <TabsTrigger value="user" className="flex items-center gap-2 text-purple-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
+            <TabsTrigger value="user" className="flex items-center gap-2 text-sky-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-sky-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-300">
               <Target className="w-4 h-4" />
               User Analytics
             </TabsTrigger>
