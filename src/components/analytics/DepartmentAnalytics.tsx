@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -29,9 +28,9 @@ export const DepartmentAnalytics = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card className="border-pink-200 bg-white shadow-lg">
+        <Card className="border-sky-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-pink-800">
+            <CardTitle className="flex items-center gap-2 text-sky-800">
               <Clock className="w-5 h-5" />
               Average Learning Hours
             </CardTitle>
@@ -40,23 +39,23 @@ export const DepartmentAnalytics = () => {
             <div className="space-y-4">
               <div className="flex justify-between">
                 <span>Engineering</span>
-                <span className="font-bold text-pink-700">52h</span>
+                <span className="font-bold text-sky-700">52h</span>
               </div>
               <Progress value={85} className="h-2" />
               <div className="flex justify-between">
                 <span>Marketing</span>
-                <span className="font-bold text-pink-700">38h</span>
+                <span className="font-bold text-sky-700">38h</span>
               </div>
               <Progress value={62} className="h-2" />
               <div className="flex justify-between">
                 <span>Sales</span>
-                <span className="font-bold text-pink-700">45h</span>
+                <span className="font-bold text-sky-700">45h</span>
               </div>
               <Progress value={73} className="h-2" />
             </div>
             <Button 
               size="sm" 
-              className="w-full mt-4 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white"
+              className="w-full mt-4 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white"
               onClick={() => handleViewDetails('department-hours')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -190,9 +189,9 @@ export const DepartmentAnalytics = () => {
         </Card>
       </div>
 
-      <Card className="border-pink-200 bg-white shadow-lg">
+      <Card className="border-sky-200 bg-white shadow-lg">
         <CardHeader>
-          <CardTitle className="text-pink-800">Average Course Completion Time</CardTitle>
+          <CardTitle className="text-sky-800">Average Course Completion Time</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -203,9 +202,9 @@ export const DepartmentAnalytics = () => {
               { dept: 'HR', time: '4.5 weeks', efficiency: 'low' },
               { dept: 'Finance', time: '3.5 weeks', efficiency: 'high' },
             ].map((item) => (
-              <div key={item.dept} className="text-center p-4 border border-pink-200 rounded-lg bg-gradient-to-br from-white to-pink-50">
-                <div className="text-sm text-pink-600">{item.dept}</div>
-                <div className="text-xl font-bold text-pink-800 mt-1">{item.time}</div>
+              <div key={item.dept} className="text-center p-4 border border-sky-200 rounded-lg bg-gradient-to-br from-white to-sky-50">
+                <div className="text-sm text-sky-600">{item.dept}</div>
+                <div className="text-xl font-bold text-sky-800 mt-1">{item.time}</div>
                 <Badge 
                   variant={item.efficiency === 'high' ? 'default' : item.efficiency === 'medium' ? 'secondary' : 'destructive'}
                   className="mt-2"

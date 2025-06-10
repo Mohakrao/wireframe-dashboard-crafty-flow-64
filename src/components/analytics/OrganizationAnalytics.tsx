@@ -15,9 +15,9 @@ export const OrganizationAnalytics = () => {
   ];
 
   const engagementData = [
-    { name: "High", value: 45, color: "#ec4899" },
+    { name: "High", value: 45, color: "#38bdf8" },
     { name: "Medium", value: 35, color: "#a855f7" },
-    { name: "Low", value: 20, color: "#38bdf8" },
+    { name: "Low", value: 20, color: "#e2e8f0" },
   ];
 
   const handleViewDetails = (cardType: string) => {
@@ -27,15 +27,15 @@ export const OrganizationAnalytics = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="hover:shadow-2xl transition-all duration-300 border-pink-200 bg-gradient-to-br from-white to-pink-50 hover:scale-105">
+        <Card className="hover:shadow-2xl transition-all duration-300 border-sky-200 bg-gradient-to-br from-white to-sky-50 hover:scale-105">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-pink-800">Total Employees</CardTitle>
-            <div className="p-2 bg-pink-100 rounded-lg">
-              <Users className="h-4 w-4 text-pink-600" />
+            <CardTitle className="text-sm font-medium text-sky-800">Total Employees</CardTitle>
+            <div className="p-2 bg-sky-100 rounded-lg">
+              <Users className="h-4 w-4 text-sky-600" />
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-pink-900 mb-2">1,247</div>
+            <div className="text-3xl font-bold text-sky-900 mb-2">1,247</div>
             <p className="text-xs text-muted-foreground mb-3">
               <span className="text-green-500 flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" />
@@ -44,7 +44,7 @@ export const OrganizationAnalytics = () => {
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white shadow-md"
               onClick={() => handleViewDetails('total-employees')}
             >
               <Eye className="w-3 h-3 mr-1" />
@@ -102,15 +102,15 @@ export const OrganizationAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="hover:shadow-2xl transition-all duration-300 border-pink-200 bg-gradient-to-br from-white to-pink-50 hover:scale-105">
+        <Card className="hover:shadow-2xl transition-all duration-300 border-purple-200 bg-gradient-to-br from-white to-purple-50 hover:scale-105">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-pink-800">Completion Rate</CardTitle>
-            <div className="p-2 bg-pink-100 rounded-lg">
-              <Award className="h-4 w-4 text-pink-600" />
+            <CardTitle className="text-sm font-medium text-purple-800">Completion Rate</CardTitle>
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <Award className="h-4 w-4 text-purple-600" />
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-pink-900 mb-2">84.3%</div>
+            <div className="text-3xl font-bold text-purple-900 mb-2">84.3%</div>
             <p className="text-xs text-muted-foreground mb-3">
               <span className="text-green-500 flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" />
@@ -119,7 +119,7 @@ export const OrganizationAnalytics = () => {
             </p>
             <Button 
               size="sm" 
-              className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-md"
+              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-md"
               onClick={() => handleViewDetails('completion-rate')}
             >
               <Eye className="w-3 h-3 mr-1" />

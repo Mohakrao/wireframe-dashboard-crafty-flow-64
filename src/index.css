@@ -46,12 +46,7 @@
     --sidebar-border: 226 232 240;
     --sidebar-ring: 139 92 246;
 
-    /* New light color palette - Pink, Purple, Sky Blue */
-    --light-pink: 251 207 232;
-    --light-pink-foreground: 157 23 77;
-    --medium-pink: 244 114 182;
-    --dark-pink: 219 39 119;
-
+    /* Updated light color palette - Sky Blue, Purple, White only */
     --light-purple: 221 214 254;
     --light-purple-foreground: 88 28 135;
     --medium-purple: 167 139 250;
@@ -62,10 +57,10 @@
     --medium-sky: 56 189 248;
     --dark-sky: 2 132 199;
 
-    /* Custom gradients with new color palette */
-    --gradient-pink-purple: linear-gradient(135deg, rgb(251, 207, 232) 0%, rgb(221, 214, 254) 50%, rgb(186, 230, 253) 100%);
-    --gradient-sky-pink: linear-gradient(135deg, rgb(186, 230, 253) 0%, rgb(251, 207, 232) 50%, rgb(221, 214, 254) 100%);
+    /* Custom gradients with updated color palette - removed pink */
+    --gradient-sky-purple: linear-gradient(135deg, rgb(186, 230, 253) 0%, rgb(221, 214, 254) 50%, rgb(255, 255, 255) 100%);
     --gradient-purple-sky: linear-gradient(135deg, rgb(221, 214, 254) 0%, rgb(186, 230, 253) 100%);
+    --gradient-light-blue: linear-gradient(135deg, rgb(240, 249, 255) 0%, rgb(224, 242, 254) 100%);
     
     /* Income/Expense colors from the design */
     --income-color: 16 185 129;
@@ -124,20 +119,16 @@
 }
 
 @layer utilities {
-  .gradient-pink-purple {
-    background: var(--gradient-pink-purple);
-  }
-  
-  .gradient-sky-pink {
-    background: var(--gradient-sky-pink);
+  .gradient-sky-purple {
+    background: var(--gradient-sky-purple);
   }
   
   .gradient-purple-sky {
     background: var(--gradient-purple-sky);
   }
   
-  .text-light-pink {
-    color: hsl(var(--light-pink-foreground));
+  .gradient-light-blue {
+    background: var(--gradient-light-blue);
   }
   
   .text-light-purple {
@@ -148,20 +139,12 @@
     color: hsl(var(--light-sky-foreground));
   }
   
-  .bg-light-pink {
-    background-color: hsl(var(--light-pink));
-  }
-  
   .bg-light-purple {
     background-color: hsl(var(--light-purple));
   }
   
   .bg-light-sky {
     background-color: hsl(var(--light-sky));
-  }
-  
-  .border-light-pink {
-    border-color: hsl(var(--medium-pink));
   }
   
   .border-light-purple {

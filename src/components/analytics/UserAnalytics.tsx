@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -25,25 +24,25 @@ export const UserAnalytics = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="border-pink-200 bg-white shadow-lg">
+        <Card className="border-sky-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="text-pink-800">Time Spent on Learning</CardTitle>
+            <CardTitle className="text-sky-800">Time Spent on Learning</CardTitle>
             <CardDescription>Daily, weekly, monthly, and yearly breakdown</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={learningTimeData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#fce7f3" />
-                <XAxis dataKey="period" stroke="#ec4899" />
-                <YAxis stroke="#ec4899" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#bae6fd" />
+                <XAxis dataKey="period" stroke="#38bdf8" />
+                <YAxis stroke="#38bdf8" />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#fdf2f8', 
-                    border: '1px solid #ec4899',
+                    backgroundColor: '#f0f9ff', 
+                    border: '1px solid #38bdf8',
                     borderRadius: '8px'
                   }} 
                 />
-                <Bar dataKey="hours" fill="#ec4899" />
+                <Bar dataKey="hours" fill="#38bdf8" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -110,9 +109,9 @@ export const UserAnalytics = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-pink-200 bg-white shadow-lg">
+        <Card className="border-purple-200 bg-white shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-pink-800">
+            <CardTitle className="flex items-center gap-2 text-purple-800">
               <Award className="w-5 h-5" />
               Assignment Scores
             </CardTitle>
@@ -120,17 +119,17 @@ export const UserAnalytics = () => {
           <CardContent>
             <div className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-pink-700">87.5</div>
+                <div className="text-3xl font-bold text-purple-700">87.5</div>
                 <div className="text-sm text-muted-foreground">Average Score</div>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-sm">Highest Score</span>
-                  <span className="font-semibold text-pink-700">96</span>
+                  <span className="font-semibold text-purple-700">96</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm">Lowest Score</span>
-                  <span className="font-semibold text-pink-700">72</span>
+                  <span className="font-semibold text-purple-700">72</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm">Improvement</span>
