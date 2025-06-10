@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -10,7 +9,7 @@ import { TrendingUp, TrendingDown, Users, BookOpen, Clock, Award, Brain, Target,
 const Index = () => {
   const [activeTab, setActiveTab] = useState("organization");
 
-  // Sample data for charts
+  // Sample data for charts with purple color scheme
   const learningTimeData = [
     { period: "Daily", hours: 2.5 },
     { period: "Weekly", hours: 12 },
@@ -43,16 +42,16 @@ const Index = () => {
   ];
 
   const engagementData = [
-    { name: "High", value: 45, color: "#10b981" },
-    { name: "Medium", value: 35, color: "#f59e0b" },
-    { name: "Low", value: 20, color: "#ef4444" },
+    { name: "High", value: 45, color: "#8b5cf6" },
+    { name: "Medium", value: 35, color: "#a855f7" },
+    { name: "Low", value: 20, color: "#c084fc" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/50">
+    <div className="min-h-screen gradient-purple-light">
       <div className="container mx-auto p-6">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-2 gradient-purple bg-clip-text text-transparent">
             Analytics Dashboard
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -61,16 +60,16 @@ const Index = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 h-12">
-            <TabsTrigger value="organization" className="flex items-center gap-2">
+          <TabsList className="grid w-full grid-cols-3 h-12 bg-card border border-purple-200">
+            <TabsTrigger value="organization" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Activity className="w-4 h-4" />
               Organization Analytics
             </TabsTrigger>
-            <TabsTrigger value="department" className="flex items-center gap-2">
+            <TabsTrigger value="department" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Users className="w-4 h-4" />
               Department Analytics
             </TabsTrigger>
-            <TabsTrigger value="user" className="flex items-center gap-2">
+            <TabsTrigger value="user" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Target className="w-4 h-4" />
               User Analytics
             </TabsTrigger>
@@ -78,13 +77,15 @@ const Index = () => {
 
           <TabsContent value="organization" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl transition-all duration-300 border-purple-200 gradient-purple-light">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Total Employees</CardTitle>
-                  <Users className="h-4 w-4 text-muted-foreground" />
+                  <CardTitle className="text-sm font-medium text-purple-800">Total Employees</CardTitle>
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <Users className="h-4 w-4 text-purple-600" />
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">1,247</div>
+                  <div className="text-2xl font-bold text-purple-900">1,247</div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-500 flex items-center gap-1">
                       <TrendingUp className="w-3 h-3" />
@@ -94,13 +95,15 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl transition-all duration-300 border-purple-200 gradient-purple-light">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Active Learners</CardTitle>
-                  <BookOpen className="h-4 w-4 text-muted-foreground" />
+                  <CardTitle className="text-sm font-medium text-purple-800">Active Learners</CardTitle>
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <BookOpen className="h-4 w-4 text-purple-600" />
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">892</div>
+                  <div className="text-2xl font-bold text-purple-900">892</div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-500 flex items-center gap-1">
                       <TrendingUp className="w-3 h-3" />
@@ -110,26 +113,30 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl transition-all duration-300 border-purple-200 gradient-purple-light">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Avg Learning Hours</CardTitle>
-                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <CardTitle className="text-sm font-medium text-purple-800">Avg Learning Hours</CardTitle>
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <Clock className="h-4 w-4 text-purple-600" />
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">48.2h</div>
+                  <div className="text-2xl font-bold text-purple-900">48.2h</div>
                   <p className="text-xs text-muted-foreground">
-                    <span className="text-blue-500">Monthly average</span>
+                    <span className="text-purple-600">Monthly average</span>
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl transition-all duration-300 border-purple-200 gradient-purple-light">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Completion Rate</CardTitle>
-                  <Award className="h-4 w-4 text-muted-foreground" />
+                  <CardTitle className="text-sm font-medium text-purple-800">Completion Rate</CardTitle>
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <Award className="h-4 w-4 text-purple-600" />
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">84.3%</div>
+                  <div className="text-2xl font-bold text-purple-900">84.3%</div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-500 flex items-center gap-1">
                       <TrendingUp className="w-3 h-3" />
@@ -141,27 +148,33 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Course Completion Trends</CardTitle>
+                  <CardTitle className="text-purple-800">Course Completion Trends</CardTitle>
                   <CardDescription>Monthly course completion statistics</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={300}>
                     <AreaChart data={courseCompletionData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="month" />
-                      <YAxis />
-                      <Tooltip />
-                      <Area type="monotone" dataKey="completed" stroke="#8884d8" fill="#8884d8" fillOpacity={0.3} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
+                      <XAxis dataKey="month" stroke="#8b5cf6" />
+                      <YAxis stroke="#8b5cf6" />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#f3e8ff', 
+                          border: '1px solid #8b5cf6',
+                          borderRadius: '8px'
+                        }} 
+                      />
+                      <Area type="monotone" dataKey="completed" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.3} />
                     </AreaChart>
                   </ResponsiveContainer>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Learning Engagement</CardTitle>
+                  <CardTitle className="text-purple-800">Learning Engagement</CardTitle>
                   <CardDescription>Employee engagement distribution</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -180,14 +193,20 @@ const Index = () => {
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
-                      <Tooltip />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#f3e8ff', 
+                          border: '1px solid #8b5cf6',
+                          borderRadius: '8px'
+                        }} 
+                      />
                     </PieChart>
                   </ResponsiveContainer>
                   <div className="flex justify-center gap-4 mt-4">
                     {engagementData.map((item) => (
                       <div key={item.name} className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
-                        <span className="text-sm">{item.name}: {item.value}%</span>
+                        <span className="text-sm text-purple-700">{item.name}: {item.value}%</span>
                       </div>
                     ))}
                   </div>
@@ -198,9 +217,9 @@ const Index = () => {
 
           <TabsContent value="department" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Clock className="w-5 h-5" />
                     Average Learning Hours
                   </CardTitle>
@@ -209,26 +228,26 @@ const Index = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span>Engineering</span>
-                      <span className="font-bold">52h</span>
+                      <span className="font-bold text-purple-700">52h</span>
                     </div>
                     <Progress value={85} className="h-2" />
                     <div className="flex justify-between">
                       <span>Marketing</span>
-                      <span className="font-bold">38h</span>
+                      <span className="font-bold text-purple-700">38h</span>
                     </div>
                     <Progress value={62} className="h-2" />
                     <div className="flex justify-between">
                       <span>Sales</span>
-                      <span className="font-bold">45h</span>
+                      <span className="font-bold text-purple-700">45h</span>
                     </div>
                     <Progress value={73} className="h-2" />
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Award className="w-5 h-5" />
                     Department Scores
                   </CardTitle>
@@ -236,19 +255,25 @@ const Index = () => {
                 <CardContent>
                   <ResponsiveContainer width="100%" height={200}>
                     <BarChart data={departmentScoresData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="department" angle={-45} textAnchor="end" height={80} />
-                      <YAxis />
-                      <Tooltip />
-                      <Bar dataKey="score" fill="#8884d8" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
+                      <XAxis dataKey="department" angle={-45} textAnchor="end" height={80} stroke="#8b5cf6" />
+                      <YAxis stroke="#8b5cf6" />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#f3e8ff', 
+                          border: '1px solid #8b5cf6',
+                          borderRadius: '8px'
+                        }} 
+                      />
+                      <Bar dataKey="score" fill="#8b5cf6" />
                     </BarChart>
                   </ResponsiveContainer>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Brain className="w-5 h-5" />
                     Skills Acquired
                   </CardTitle>
@@ -257,19 +282,19 @@ const Index = () => {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-sm">AI/ML Fundamentals</span>
-                      <Badge variant="secondary">+23</Badge>
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700">+23</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Data Analysis</span>
-                      <Badge variant="secondary">+18</Badge>
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700">+18</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Leadership</span>
-                      <Badge variant="secondary">+15</Badge>
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700">+15</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Cloud Computing</span>
-                      <Badge variant="secondary">+12</Badge>
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700">+12</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -277,9 +302,9 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Engagement Levels by Department</CardTitle>
+                  <CardTitle className="text-purple-800">Engagement Levels by Department</CardTitle>
                   <CardDescription>Overall aptitude assessment results</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -288,10 +313,10 @@ const Index = () => {
                       const scores = [92, 78, 85, 81, 88];
                       return (
                         <div key={dept} className="flex items-center justify-between">
-                          <span className="text-sm font-medium">{dept}</span>
+                          <span className="text-sm font-medium text-purple-700">{dept}</span>
                           <div className="flex items-center gap-2">
                             <Progress value={scores[index]} className="w-20 h-2" />
-                            <span className="text-sm text-muted-foreground">{scores[index]}%</span>
+                            <span className="text-sm text-purple-600">{scores[index]}%</span>
                           </div>
                         </div>
                       );
@@ -300,28 +325,34 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Skill Gaps Analysis</CardTitle>
+                  <CardTitle className="text-purple-800">Skill Gaps Analysis</CardTitle>
                   <CardDescription>Areas requiring focused development</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={250}>
                     <BarChart data={skillGapsData} layout="horizontal">
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis type="number" />
-                      <YAxis dataKey="skill" type="category" width={100} />
-                      <Tooltip />
-                      <Bar dataKey="gap" fill="#ef4444" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
+                      <XAxis type="number" stroke="#8b5cf6" />
+                      <YAxis dataKey="skill" type="category" width={100} stroke="#8b5cf6" />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#f3e8ff', 
+                          border: '1px solid #8b5cf6',
+                          borderRadius: '8px'
+                        }} 
+                      />
+                      <Bar dataKey="gap" fill="#a855f7" />
                     </BarChart>
                   </ResponsiveContainer>
                 </CardContent>
               </Card>
             </div>
 
-            <Card>
+            <Card className="border-purple-200">
               <CardHeader>
-                <CardTitle>Average Course Completion Time</CardTitle>
+                <CardTitle className="text-purple-800">Average Course Completion Time</CardTitle>
                 <CardDescription>Time efficiency across departments</CardDescription>
               </CardHeader>
               <CardContent>
@@ -333,9 +364,9 @@ const Index = () => {
                     { dept: 'HR', time: '4.5 weeks', efficiency: 'low' },
                     { dept: 'Finance', time: '3.5 weeks', efficiency: 'high' },
                   ].map((item) => (
-                    <div key={item.dept} className="text-center p-4 border rounded-lg">
-                      <div className="text-sm text-muted-foreground">{item.dept}</div>
-                      <div className="text-xl font-bold mt-1">{item.time}</div>
+                    <div key={item.dept} className="text-center p-4 border border-purple-200 rounded-lg gradient-purple-light">
+                      <div className="text-sm text-purple-600">{item.dept}</div>
+                      <div className="text-xl font-bold text-purple-800 mt-1">{item.time}</div>
                       <Badge 
                         variant={item.efficiency === 'high' ? 'default' : item.efficiency === 'medium' ? 'secondary' : 'destructive'}
                         className="mt-2"
@@ -351,33 +382,39 @@ const Index = () => {
 
           <TabsContent value="user" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Time Spent on Learning</CardTitle>
+                  <CardTitle className="text-purple-800">Time Spent on Learning</CardTitle>
                   <CardDescription>Daily, weekly, monthly, and yearly breakdown</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={learningTimeData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="period" />
-                      <YAxis />
-                      <Tooltip />
-                      <Bar dataKey="hours" fill="#10b981" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
+                      <XAxis dataKey="period" stroke="#8b5cf6" />
+                      <YAxis stroke="#8b5cf6" />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#f3e8ff', 
+                          border: '1px solid #8b5cf6',
+                          borderRadius: '8px'
+                        }} 
+                      />
+                      <Bar dataKey="hours" fill="#8b5cf6" />
                     </BarChart>
                   </ResponsiveContainer>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle>Course Completion Progress</CardTitle>
+                  <CardTitle className="text-purple-800">Course Completion Progress</CardTitle>
                   <CardDescription>Number of courses completed over time</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary">23</div>
+                      <div className="text-3xl font-bold text-purple-700">23</div>
                       <div className="text-sm text-muted-foreground">Courses Completed</div>
                     </div>
                     <Progress value={76} className="h-3" />
@@ -389,11 +426,11 @@ const Index = () => {
                   <div className="mt-6 space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm">This Month</span>
-                      <span className="font-semibold">4 completed</span>
+                      <span className="font-semibold text-purple-700">4 completed</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">This Quarter</span>
-                      <span className="font-semibold">11 completed</span>
+                      <span className="font-semibold text-purple-700">11 completed</span>
                     </div>
                   </div>
                 </CardContent>
@@ -401,9 +438,9 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Calendar className="w-5 h-5" />
                     Deadlines Tracking
                   </CardTitle>
@@ -412,11 +449,11 @@ const Index = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Met on Time</span>
-                      <Badge variant="default">18</Badge>
+                      <Badge variant="default" className="bg-purple-600">18</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Exceeded Duration</span>
-                      <Badge variant="secondary">3</Badge>
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700">3</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Missed Deadlines</span>
@@ -430,9 +467,9 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Award className="w-5 h-5" />
                     Assignment Scores
                   </CardTitle>
@@ -440,17 +477,17 @@ const Index = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600">87.5</div>
+                      <div className="text-3xl font-bold text-purple-700">87.5</div>
                       <div className="text-sm text-muted-foreground">Average Score</div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Highest Score</span>
-                        <span className="font-semibold">96</span>
+                        <span className="font-semibold text-purple-700">96</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Lowest Score</span>
-                        <span className="font-semibold">72</span>
+                        <span className="font-semibold text-purple-700">72</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Improvement</span>
@@ -461,9 +498,9 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-purple-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-purple-800">
                     <Brain className="w-5 h-5" />
                     AI Brainstorming
                   </CardTitle>
@@ -471,21 +508,21 @@ const Index = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="text-center">
-                      <div className="text-lg font-semibold">Analytical Thinker</div>
+                      <div className="text-lg font-semibold text-purple-800">Analytical Thinker</div>
                       <div className="text-sm text-muted-foreground">Based on interaction patterns</div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Sessions</span>
-                        <span className="font-semibold">47</span>
+                        <span className="font-semibold text-purple-700">47</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Avg Duration</span>
-                        <span className="font-semibold">24 min</span>
+                        <span className="font-semibold text-purple-700">24 min</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Problem Solving</span>
-                        <Badge variant="default">Advanced</Badge>
+                        <Badge variant="default" className="bg-purple-600">Advanced</Badge>
                       </div>
                     </div>
                   </div>
@@ -493,24 +530,30 @@ const Index = () => {
               </Card>
             </div>
 
-            <Card>
+            <Card className="border-purple-200">
               <CardHeader>
-                <CardTitle>Learning Progress Timeline</CardTitle>
+                <CardTitle className="text-purple-800">Learning Progress Timeline</CardTitle>
                 <CardDescription>Your learning journey over the past 6 months</CardDescription>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
                   <LineChart data={courseCompletionData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <Tooltip />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e9d5ff" />
+                    <XAxis dataKey="month" stroke="#8b5cf6" />
+                    <YAxis stroke="#8b5cf6" />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: '#f3e8ff', 
+                        border: '1px solid #8b5cf6',
+                        borderRadius: '8px'
+                      }} 
+                    />
                     <Line 
                       type="monotone" 
                       dataKey="completed" 
-                      stroke="#8884d8" 
+                      stroke="#8b5cf6" 
                       strokeWidth={3}
-                      dot={{ fill: '#8884d8', strokeWidth: 2, r: 6 }}
+                      dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 6 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
