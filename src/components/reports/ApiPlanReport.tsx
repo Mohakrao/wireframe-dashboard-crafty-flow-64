@@ -13,80 +13,71 @@ export const ApiPlanReport = () => {
     // Title
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
-    doc.text('Analytics Dashboard API Plan', margin, yPosition);
+    doc.text('Optimized Analytics Dashboard API Plan', margin, yPosition);
     yPosition += 20;
 
     // Subtitle
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
-    doc.text('Comprehensive API documentation for all dashboard features', margin, yPosition);
+    doc.text('Streamlined API documentation with consolidated endpoints', margin, yPosition);
     yPosition += 20;
 
-    // Organization Analytics Section
+    // Core Analytics APIs Section
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
-    doc.text('Organization Analytics APIs', margin, yPosition);
+    doc.text('Core Analytics APIs (Consolidated)', margin, yPosition);
     yPosition += 15;
 
-    const orgApis = [
+    const coreApis = [
       {
-        name: 'GET /api/organization/employee-stats',
-        purpose: 'Fetch total employee count and growth metrics',
-        feature: 'Total Employees card in Organization Analytics',
-        inputs: 'organizationId, timeframe',
-        output: 'Employee count, growth percentage, trend data',
-        functionality: 'Aggregates employee data from HR systems and calculates month-over-month growth',
-        json: '{"totalEmployees": 1247, "growthPercentage": 12, "trend": "up"}'
+        name: 'GET /api/analytics/metrics',
+        purpose: 'Universal endpoint for all analytics metrics with flexible filtering',
+        features: 'All dashboard cards (employees, learners, hours, completion rates)',
+        inputs: 'scope (org/dept/user), metric_types[], timeframe, filters{}',
+        output: 'Unified metrics object with requested data points',
+        functionality: 'Single endpoint that handles organization, department, and user metrics based on scope parameter',
+        json: '{"employees": 1247, "activeLearners": 892, "avgHours": 48.2, "completionRate": 84.3}'
       },
       {
-        name: 'GET /api/organization/active-learners',
-        purpose: 'Get active learning participants and engagement rates',
-        feature: 'Active Learners card in Organization Analytics',
-        inputs: 'organizationId, period',
-        output: 'Active learner count, engagement rate, participation metrics',
-        functionality: 'Tracks users with learning activity in specified timeframe and calculates engagement',
-        json: '{"activeLearners": 892, "engagementRate": 71.5, "totalUsers": 1247}'
+        name: 'GET /api/analytics/trends',
+        purpose: 'Time-series data for all trending visualizations',
+        features: 'Course completion trends, engagement over time, learning progress charts',
+        inputs: 'scope, chart_type, period, granularity (daily/weekly/monthly)',
+        output: 'Time-series arrays for chart rendering',
+        functionality: 'Consolidates all trend data into configurable time-series format',
+        json: '[{"period": "Jan", "completions": 45, "engagement": 78, "hours": 52}]'
       },
       {
-        name: 'GET /api/organization/learning-hours',
-        purpose: 'Calculate average learning hours across organization',
-        feature: 'Avg Learning Hours card in Organization Analytics',
-        inputs: 'organizationId, period',
-        output: 'Average hours, distribution data, comparison metrics',
-        functionality: 'Aggregates all user learning session durations and computes organizational average',
-        json: '{"averageHours": 48.2, "distribution": [35, 42, 48, 52, 55]}'
+        name: 'GET /api/analytics/distributions',
+        purpose: 'All distribution and breakdown data for pie charts and comparative analysis',
+        features: 'Engagement levels, skill gaps, department comparisons, user rankings',
+        inputs: 'scope, distribution_type, categories[], comparison_basis',
+        output: 'Categorized data arrays for distribution visualizations',
+        functionality: 'Handles all categorical breakdowns and comparative distributions',
+        json: '[{"category": "High Engagement", "value": 45, "department": "Engineering"}]'
       },
       {
-        name: 'GET /api/organization/completion-rate',
-        purpose: 'Get overall course completion statistics',
-        feature: 'Completion Rate card in Organization Analytics',
-        inputs: 'organizationId, timeframe, courseType',
-        output: 'Completion percentage, quarterly growth, completion trends',
-        functionality: 'Calculates ratio of completed courses to enrolled courses across organization',
-        json: '{"completionRate": 84.3, "quarterlyGrowth": 5.2, "completedCourses": 2847}'
+        name: 'GET /api/analytics/performance',
+        purpose: 'Performance scores, benchmarks, and comparative analytics',
+        features: 'Department scores, peer comparisons, AI aptitude, skill intelligence',
+        inputs: 'scope, performance_metrics[], benchmark_type, comparison_group',
+        output: 'Performance data with contextual benchmarks and rankings',
+        functionality: 'Unified performance calculation with flexible benchmarking',
+        json: '{"score": 88, "percentile": 92, "benchmark": 73, "trend": "improving"}'
       },
       {
-        name: 'GET /api/organization/course-trends',
-        purpose: 'Retrieve monthly course completion trend data',
-        feature: 'Course Completion Trends chart in Organization Analytics',
-        inputs: 'organizationId, months',
-        output: 'Monthly completion data array for chart visualization',
-        functionality: 'Aggregates course completions by month for trend analysis and forecasting',
-        json: '[{"month": "Jan", "completed": 45}, {"month": "Feb", "completed": 52}]'
-      },
-      {
-        name: 'GET /api/organization/engagement-distribution',
-        purpose: 'Get learning engagement level distribution',
-        feature: 'Learning Engagement pie chart in Organization Analytics',
-        inputs: 'organizationId, engagementThresholds',
-        output: 'Percentage breakdown of engagement levels across users',
-        functionality: 'Categorizes users into engagement tiers based on activity metrics and learning patterns',
-        json: '[{"name": "High", "value": 45}, {"name": "Medium", "value": 35}]'
+        name: 'GET /api/analytics/progress',
+        purpose: 'Progress tracking for courses, goals, streaks, and achievements',
+        features: 'Course progress, learning streaks, goal tracking, milestone achievements',
+        inputs: 'scope, progress_types[], include_history, goal_definitions',
+        output: 'Progress status with completion percentages and achievement data',
+        functionality: 'Tracks all forms of progress with configurable goal definitions',
+        json: '{"completed": 23, "total": 30, "streak": 14, "achievements": ["7-day"]}'
       }
     ];
 
-    // Add Organization APIs
-    orgApis.forEach((api, index) => {
+    // Add Core APIs
+    coreApis.forEach((api, index) => {
       if (yPosition > 250) {
         doc.addPage();
         yPosition = 20;
@@ -100,7 +91,7 @@ export const ApiPlanReport = () => {
       doc.setFont('helvetica', 'normal');
       doc.text(`Purpose: ${api.purpose}`, margin + 5, yPosition);
       yPosition += 6;
-      doc.text(`Feature: ${api.feature}`, margin + 5, yPosition);
+      doc.text(`Features: ${api.features}`, margin + 5, yPosition);
       yPosition += 6;
       doc.text(`Inputs: ${api.inputs}`, margin + 5, yPosition);
       yPosition += 6;
@@ -112,7 +103,7 @@ export const ApiPlanReport = () => {
       yPosition += 12;
     });
 
-    // Department Analytics Section
+    // Specialized APIs Section
     if (yPosition > 200) {
       doc.addPage();
       yPosition = 20;
@@ -120,41 +111,41 @@ export const ApiPlanReport = () => {
 
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
-    doc.text('Department Analytics APIs', margin, yPosition);
+    doc.text('Specialized APIs', margin, yPosition);
     yPosition += 15;
 
-    const deptApis = [
+    const specializedApis = [
       {
-        name: 'GET /api/department/learning-hours',
-        purpose: 'Fetch department-wise learning hours breakdown',
-        feature: 'Average Learning Hours card in Department Analytics',
-        inputs: 'organizationId, departmentIds, period',
-        output: 'Department names and corresponding total learning hours',
-        functionality: 'Aggregates learning session durations by department affiliation for comparative analysis',
-        json: '[{"department": "Engineering", "hours": 52}, {"department": "Sales", "hours": 45}]'
+        name: 'GET /api/user/interactions',
+        purpose: 'AI interactions, support tickets, and user activity patterns',
+        features: 'AI interaction metrics, support tracking, usage patterns',
+        inputs: 'user_id, interaction_types[], timeframe, include_support',
+        output: 'User interaction data with AI usage patterns and support history',
+        functionality: 'Consolidates all user interaction data including AI tools and support',
+        json: '{"aiQueries": 12, "supportTickets": 3, "satisfaction": 4.8, "patterns": {}}'
       },
       {
-        name: 'GET /api/department/scores',
-        purpose: 'Get department performance scores',
-        feature: 'Department Scores chart in Department Analytics',
-        inputs: 'organizationId, scoreType, timeframe',
-        output: 'Department-wise average scores and performance metrics',
-        functionality: 'Calculates mean scores per department with statistical analysis',
-        json: '[{"department": "Engineering", "score": 88}, {"department": "Sales", "score": 82}]'
+        name: 'GET /api/admin/operations',
+        purpose: 'Operational metrics, system health, and platform analytics',
+        features: 'Resource usage, platform health, administrative insights',
+        inputs: 'metric_categories[], system_components[], timeframe',
+        output: 'Operational data for platform monitoring and resource planning',
+        functionality: 'Aggregates operational metrics for system administrators',
+        json: '{"resourceUsage": {"videos": 45}, "systemHealth": 98, "activeUsers": 1247}'
       },
       {
-        name: 'GET /api/department/skills-acquired',
-        purpose: 'Track skills gained across departments',
-        feature: 'Skills Acquired card in Department Analytics',
-        inputs: 'organizationId, skillCategories, timeframe',
-        output: 'Skills acquired count by type and department',
-        functionality: 'Monitors skill-based learning completions and competency achievements',
-        json: '[{"skill": "AI/ML", "count": 23}, {"skill": "Data Analysis", "count": 18}]'
+        name: 'GET /api/recognition/leaderboards',
+        purpose: 'Recognition data, top performers, and achievement highlights',
+        features: 'Leaderboards, top performers, recognition systems',
+        inputs: 'scope, leaderboard_type, period, achievement_categories[]',
+        output: 'Ranked lists and recognition data for gamification',
+        functionality: 'Handles all recognition and leaderboard functionality',
+        json: '[{"rank": 1, "name": "Alex Chen", "score": 95, "achievements": 12}]'
       }
     ];
 
-    // Add Department APIs (showing first 3 for brevity)
-    deptApis.forEach((api, index) => {
+    // Add Specialized APIs
+    specializedApis.forEach((api, index) => {
       if (yPosition > 250) {
         doc.addPage();
         yPosition = 20;
@@ -162,13 +153,13 @@ export const ApiPlanReport = () => {
 
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
-      doc.text(`${index + 7}. ${api.name}`, margin, yPosition);
+      doc.text(`${index + 6}. ${api.name}`, margin, yPosition);
       yPosition += 8;
 
       doc.setFont('helvetica', 'normal');
       doc.text(`Purpose: ${api.purpose}`, margin + 5, yPosition);
       yPosition += 6;
-      doc.text(`Feature: ${api.feature}`, margin + 5, yPosition);
+      doc.text(`Features: ${api.features}`, margin + 5, yPosition);
       yPosition += 6;
       doc.text(`Inputs: ${api.inputs}`, margin + 5, yPosition);
       yPosition += 6;
@@ -180,7 +171,7 @@ export const ApiPlanReport = () => {
       yPosition += 12;
     });
 
-    // User Analytics Section
+    // API Consolidation Benefits Section
     if (yPosition > 200) {
       doc.addPage();
       yPosition = 20;
@@ -188,54 +179,71 @@ export const ApiPlanReport = () => {
 
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
-    doc.text('User Analytics APIs', margin, yPosition);
+    doc.text('API Consolidation Benefits', margin, yPosition);
     yPosition += 15;
 
-    const userApis = [
-      {
-        name: 'GET /api/user/learning-time',
-        purpose: 'Get individual user learning time breakdown',
-        feature: 'Time Spent on Learning chart in User Analytics',
-        inputs: 'userId, granularity',
-        output: 'Learning hours across different time periods',
-        functionality: 'Aggregates user session data across specified time periods for personal analytics',
-        json: '[{"period": "Daily", "hours": 2.5}, {"period": "Weekly", "hours": 12}]'
-      },
-      {
-        name: 'GET /api/user/course-progress',
-        purpose: 'Track individual course completion progress',
-        feature: 'Course Completion Progress section in User Analytics',
-        inputs: 'userId, courseType, includeInProgress',
-        output: 'Completed courses, progress percentage, remaining courses',
-        functionality: 'Calculates completion status across enrolled courses and tracks learning pathway progress',
-        json: '{"completed": 23, "total": 30, "percentage": 76, "thisMonth": 4}'
-      }
+    const benefits = [
+      'Reduced from 29 APIs to 8 streamlined endpoints (72% reduction)',
+      'Single /metrics endpoint handles org, dept, and user analytics with scope parameter',
+      'Flexible filtering eliminates need for separate endpoints per feature',
+      'Consistent response formats across all analytics data',
+      'Easier maintenance and testing with fewer endpoints',
+      'Better caching strategies with consolidated data fetching',
+      'Reduced API surface area improves security and monitoring'
     ];
 
-    // Add User APIs (showing first 2 for brevity)
-    userApis.forEach((api, index) => {
-      if (yPosition > 250) {
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    benefits.forEach((benefit, index) => {
+      if (yPosition > 270) {
         doc.addPage();
         yPosition = 20;
       }
-
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'bold');
-      doc.text(`${index + 22}. ${api.name}`, margin, yPosition);
+      doc.text(`• ${benefit}`, margin, yPosition);
       yPosition += 8;
+    });
 
+    // Example Usage Section
+    if (yPosition > 200) {
+      doc.addPage();
+      yPosition = 20;
+    }
+
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Example API Usage', margin, yPosition);
+    yPosition += 15;
+
+    const examples = [
+      {
+        title: 'Organization Total Employees:',
+        call: 'GET /api/analytics/metrics?scope=org&metric_types[]=employees&timeframe=current'
+      },
+      {
+        title: 'Department Learning Hours:',
+        call: 'GET /api/analytics/metrics?scope=dept&metric_types[]=hours&filters[dept]=engineering'
+      },
+      {
+        title: 'User Course Progress:',
+        call: 'GET /api/analytics/progress?scope=user&progress_types[]=courses&user_id=123'
+      },
+      {
+        title: 'Engagement Trends:',
+        call: 'GET /api/analytics/trends?scope=org&chart_type=engagement&period=6months&granularity=monthly'
+      }
+    ];
+
+    doc.setFontSize(10);
+    examples.forEach((example, index) => {
+      if (yPosition > 260) {
+        doc.addPage();
+        yPosition = 20;
+      }
+      doc.setFont('helvetica', 'bold');
+      doc.text(example.title, margin, yPosition);
+      yPosition += 6;
       doc.setFont('helvetica', 'normal');
-      doc.text(`Purpose: ${api.purpose}`, margin + 5, yPosition);
-      yPosition += 6;
-      doc.text(`Feature: ${api.feature}`, margin + 5, yPosition);
-      yPosition += 6;
-      doc.text(`Inputs: ${api.inputs}`, margin + 5, yPosition);
-      yPosition += 6;
-      doc.text(`Output: ${api.output}`, margin + 5, yPosition);
-      yPosition += 6;
-      doc.text(`Functionality: ${api.functionality}`, margin + 5, yPosition);
-      yPosition += 6;
-      doc.text(`JSON: ${api.json}`, margin + 5, yPosition);
+      doc.text(example.call, margin + 5, yPosition);
       yPosition += 12;
     });
 
@@ -245,11 +253,11 @@ export const ApiPlanReport = () => {
       doc.setPage(i);
       doc.setFontSize(8);
       doc.text(`Page ${i} of ${pageCount}`, pageWidth - 30, doc.internal.pageSize.height - 10);
-      doc.text('Analytics Dashboard API Plan - Generated ' + new Date().toLocaleDateString(), margin, doc.internal.pageSize.height - 10);
+      doc.text('Optimized Analytics API Plan - Generated ' + new Date().toLocaleDateString(), margin, doc.internal.pageSize.height - 10);
     }
 
     // Save the PDF
-    doc.save('analytics-dashboard-api-plan.pdf');
+    doc.save('optimized-analytics-api-plan.pdf');
   };
 
   return (
@@ -259,7 +267,7 @@ export const ApiPlanReport = () => {
         className="bg-gradient-to-r from-sky-500 to-purple-500 hover:from-sky-600 hover:to-purple-600 text-white shadow-md"
       >
         <Download className="w-4 h-4 mr-2" />
-        Download API Plan PDF
+        Download Optimized API Plan
       </Button>
       <Button 
         variant="outline"
