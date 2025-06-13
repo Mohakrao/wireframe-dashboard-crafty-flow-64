@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Activity, Users, Target } from "lucide-react";
 import { OrganizationAnalytics } from "@/components/analytics/OrganizationAnalytics";
 import { DepartmentAnalytics } from "@/components/analytics/DepartmentAnalytics";
 import { UserAnalytics } from "@/components/analytics/UserAnalytics";
+import { ApiPlanReport } from "@/components/reports/ApiPlanReport";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("organization");
@@ -12,13 +12,16 @@ const Index = () => {
   return (
     <div className="min-h-screen gradient-sky-purple">
       <div className="container mx-auto p-6">
-        <div className="mb-8">
-          <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-sky-600 via-purple-600 to-sky-600 bg-clip-text text-transparent">
-            Analytics Dashboard
-          </h1>
-          <p className="text-purple-700 text-lg font-medium">
-            Comprehensive learning and development insights across your organization
-          </p>
+        <div className="mb-8 flex justify-between items-start">
+          <div>
+            <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-sky-600 via-purple-600 to-sky-600 bg-clip-text text-transparent">
+              Analytics Dashboard
+            </h1>
+            <p className="text-purple-700 text-lg font-medium">
+              Comprehensive learning and development insights across your organization
+            </p>
+          </div>
+          <ApiPlanReport />
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
