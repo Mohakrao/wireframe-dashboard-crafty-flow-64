@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Activity, Users, Target } from "lucide-react";
@@ -7,6 +6,7 @@ import { DepartmentAnalytics } from "@/components/analytics/DepartmentAnalytics"
 import { UserAnalytics } from "@/components/analytics/UserAnalytics";
 import { ApiPlanReport } from "@/components/reports/ApiPlanReport";
 import { BackendApiReport } from "@/components/reports/BackendApiReport";
+import { BackendCodeExport } from "@/components/reports/BackendCodeExport";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("organization");
@@ -26,6 +26,7 @@ const Index = () => {
           <div className="flex gap-2">
             <ApiPlanReport />
             <BackendApiReport />
+            <BackendCodeExport />
           </div>
         </div>
 
