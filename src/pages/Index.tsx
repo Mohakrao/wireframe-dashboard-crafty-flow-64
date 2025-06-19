@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Activity, Users, Target } from "lucide-react";
@@ -5,6 +6,7 @@ import { OrganizationAnalytics } from "@/components/analytics/OrganizationAnalyt
 import { DepartmentAnalytics } from "@/components/analytics/DepartmentAnalytics";
 import { UserAnalytics } from "@/components/analytics/UserAnalytics";
 import { ApiPlanReport } from "@/components/reports/ApiPlanReport";
+import { BackendApiReport } from "@/components/reports/BackendApiReport";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("organization");
@@ -21,7 +23,10 @@ const Index = () => {
               Comprehensive learning and development insights across your organization
             </p>
           </div>
-          <ApiPlanReport />
+          <div className="flex gap-2">
+            <ApiPlanReport />
+            <BackendApiReport />
+          </div>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
